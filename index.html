@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1 id="text"></h1>
+        <script type="module">
+            import { readFile } from './fs.js';
+            import fs from './fs.js';
+            function foo() {}
+            fs.readFile = foo;
+            if (readFile !== foo) {
+                document.querySelector("#text").innerHTML = "Didn't update binding!";
+            }
+            else {
+                document.querySelector("#text").innerHTML = "Binding updated as expected!";
+            }
+        </script>
+    </body>
+</html>
